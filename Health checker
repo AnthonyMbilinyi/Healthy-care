@@ -1,0 +1,50 @@
+def collect_health_statistics():
+  """
+  Collects basic health statistics from the user.
+
+  Returns:
+    A dictionary containing the collected health statistics.
+  """
+
+  statistics = {}
+
+  # Collect basic information
+  statistics['name'] = input("Enter your name: ")
+  statistics['age'] = int(input("Enter your age: "))
+  statistics['gender'] = input("Enter your gender (M/F): ")
+
+  # Collect health measurements
+  statistics['height_cm'] = float(input("Enter your height (cm): "))
+  statistics['weight_kg'] = float(input("Enter your weight (kg): "))
+  statistics['blood_pressure'] = input("Enter your blood pressure (e.g., 120/80): ")
+  statistics['heart_rate'] = int(input("Enter your resting heart rate (bpm): "))
+
+  # Collect lifestyle information (optional)
+  statistics['smoking'] = input("Do you smoke? (Y/N): ").upper() == 'Y'
+  statistics['exercise'] = input("How often do you exercise? (e.g., Daily, Weekly, Rarely): ")
+  statistics['diet'] = input("Describe your general diet (e.g., Balanced, Vegetarian): ")
+
+  return statistics
+
+# Example usage
+user_data = collect_health_statistics()
+print(user_data) 
+
+Explanation:
+ * collect_health_statistics() function:
+   * Defines a function to collect the health statistics.
+   * Creates an empty dictionary statistics to store the collected data.
+   * Prompts the user to enter their name, age, gender, and health measurements (height, weight, blood pressure, heart rate).
+   * Optionally collects lifestyle information like smoking habits, exercise frequency, and diet.
+   * Returns the statistics dictionary containing all the collected information.
+ * Example usage:
+   * Calls the collect_health_statistics() function to get user data.
+   * Stores the returned data in the user_data variable.
+   * Prints the collected data to the console.
+Key improvements:
+ * Data validation: You can add checks to ensure the input data is valid (e.g., age should be a positive integer, blood pressure should be in the correct format).
+ * Error handling: Implement try-except blocks to handle potential errors during input (e.g., invalid input types).
+ * Data storage: Store the collected data in a file (e.g., CSV, JSON) for later analysis or retrieval.
+ * Data analysis: Perform basic data analysis (e.g., calculate BMI, identify potential health risks) and provide feedback to the user.
+ * User interface: Create a more user-friendly interface (e.g., using a GUI library like Tkinter) for better user experience.
+This program provides a basic framework for collecting health statistics. You can further enhance it based on your specific requirements and the type of health data you want to collect.
